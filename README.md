@@ -28,3 +28,6 @@ var confirm = new Notify2("Are you sure you want to blow up the Earth?", "info")
 confirm.doConfirm("yesButtonCallback()", "noButtonCallback()");
 confirm.notify();
 </code>
+
+Project Web Page:
+https://code.cloudulus.media/project/100/notify.js
