@@ -136,3 +136,13 @@ function hideNotify2(notify)
         }
     }
 }
+
+function notify2(msg, cls, ah)
+{
+    if (msg == undefined) msg = "";
+    if (cls == undefined) cls = "error";
+    if (ah == undefined) ah = true;
+    var notify = new Notify2(msg, cls);
+    notify.setAutoHide(ah);
+    notify.notify();
+}
