@@ -1,9 +1,13 @@
 // Default settings
+var useSounds = true; // Use Sounds.js (seperate script required)
 var n2DefaultClass = "error";
 var n2DefaultDelay = 3000; // 3000 milliseconds = 3 seconds
 var n2DefaultAutoHide = true; // Auto hide notifications be default (true or false)
-var n2DefaultIcon = "fa-times-circle" // Default FontAwesome icon
-var n2DefaultSound = sndError // Default sound from sounds.js
+var n2DefaultIcon = "fa-times-circle"; // Default FontAwesome icon
+if (useSounds)
+{
+    var n2DefaultSound = sndError; // Default sound from sounds.js
+}
 var n2DefaultMessage = "An unknown error occurred!"; // Default message (if none is supplied)
 
 $(document).click(function(e){
@@ -25,7 +29,7 @@ class Notify2
         if (delay == undefined) delay = n2DefaultDelay;
         this.delay = delay;
         this.icon = n2DefaultIcon;
-        this.sound = n2DefaultSound;
+        if (useSounds) this.sound = n2DefaultSound;
         this.id = "notify2-" + new Date().getTime();
         this.cbYes = "void(0)";
         this.cbNo = "void(0)";
@@ -59,15 +63,15 @@ class Notify2
         {
             case "success":
                 this.icon = "fa-check-square";
-                this.sound = sndSuccess;
+                if (useSounds) this.sound = sndSuccess;
             break;
             case "warn":
                 this.icon = "fa-exclamation-triangle";
-                this.sound = sndDing;
+                if (useSounds) this.sound = sndDing;
             break;
             case "info":
                 this.icon = "fa-question-circle";
-                this.sound = sndMessage;
+                if (useSounds) this.sound = sndMessage;
             break;
         }
         console.log(this.message);
@@ -95,7 +99,7 @@ class Notify2
         }
 
         showNotify2(notify);
-        playSound(this.sound);
+        if (useSounds) playSound(this.sound);
         return true;
     }
 }
@@ -137,6 +141,7 @@ function hideNotify2(notify)
     }
 }
 
+// Shortcut function to easily instantiate on one line
 function notify2(msg, cls, ah)
 {
     if (msg == undefined) msg = "";
