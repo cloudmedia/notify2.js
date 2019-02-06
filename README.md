@@ -1,7 +1,7 @@
 # notify2.js
-Notify2.js is a javascript class and library that allows you to quickly implement a notifcation bar at the bottom of the screen.
+## Notify2.js is a javascript class and library that allows you to quickly implement a notifcation bar at the bottom of the screen.
 
-Some of the features include:
+### Some of the features include:
 
 - Four classes: error, success, info, and warn, each with different colors, icons and sounds
 - UI sounds play, depending on class
@@ -13,21 +13,20 @@ Some of the features include:
 
 Notify2.js requires only jquery to work. To use, simply import notify2.js and notify2.css into your web site.
 
-Example:
+Notify2.js also works with Sounds.js as an optional plugin. Simply load Sounds.js into your site and set `useSounds` to `true`.
 
-<code>
+#### Example:
+```
 var notify = new Notify2("Some kind of error occurred!", "error");
 notify.notify();
-</code>
+```
 
-
-Confirm dialog example:
-
-<code>
+#### Confirm dialog example:
+```
 var confirm = new Notify2("Are you sure you want to blow up the Earth?", "info");
 confirm.doConfirm("yesButtonCallback()", "noButtonCallback()");
 confirm.notify();
-</code>
+```
 
-Project Web Page:
+### Project Web Page:
 https://code.cloudulus.media/project/100/notify.js
