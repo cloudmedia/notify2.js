@@ -56,14 +56,15 @@ setDelay(3000) // Sets delay time before auto-hide. Default is 300. Accepts inte
 setBindEvent('click') // Set DOM event to bind confirm buttons to (asynchronously)
 
 setDebug(true|false) // Turns on console debugging (default is false)
+
+doConfirm(yesCallbackFunction, noCallbackFunction)  // Sets up notification to be a confirmation dialog
+                                                    // with a yes and no button.
+                                                    // Accepts two function references
 ```
 
 ### Actions
 
 ```javascript
-doConfirm(yesCallbackFunction, noCallbackFunction) // Sets up notification to be a confirmation dialog, with a yes and no button.
-                                                   // Accepts two function references
-
 notify() // Calls notification into existence
 ```
 
