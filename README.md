@@ -3,7 +3,7 @@
 
 ### Some of the features include:
 
-- Four classes: error, success, info, and warn, each with different colors, icons and sounds
+- Four classes: error, success, info, warn, and mail, each with different colors, icons and sounds
 - UI sounds play, depending on class
 - Auto-hide toggle via class metrhod
 - Set auto-hide delay via class method
@@ -27,6 +27,13 @@ var confirm = new Notify2("Are you sure you want to blow up the Earth?", "info")
 confirm.doConfirm(yesButtonCallback, noButtonCallback);
 confirm.setBindEvent('touchstart'); // Sets event to bind to on buttons (asynchronously)
 confirm.notify();
+```
+
+#### Mail dialog example:
+```javascript
+var n = new Notify2("You have a new message, would you like to read it now?", "mail");
+n.doConfirm(readMailFunction);
+n.notify();
 ```
 
 ## Methods
