@@ -87,3 +87,7 @@ notify2(message, class, autoHide) // Shortcut function to instantiate a basic no
 
 ### Project Web Page:
 https://code.cloudulus.media/project/100/notify.js
+
+# NotifyD.js
+
+NotifyD is a notification daemon written in Javascript meant to work with Notify2.js.
