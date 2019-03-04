@@ -36,6 +36,27 @@ n.doConfirm(readMailFunction);
 n.notify();
 ```
 
+#### Callback with target example:
+```html
+<button class="del-user-btn" data-id="10000">Delete User</button>
+```
+
+```javascript
+$(document).ready(function () {
+    $(".del-user-btn").click(function(){
+        var n = new Notify2("Are you sure you want to delete this user?", "warn");
+        n.doConfirm(doDelUser, null, $(this));
+        n.notify();
+    });
+});
+
+function doDelUser(me)
+{
+    var id = me.target.data('id');
+    console.log(id);
+}
+```
+
 ## Methods
 
 ### Constructor:
