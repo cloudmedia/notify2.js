@@ -85,9 +85,10 @@ setBindEvent('click') // Set DOM event to bind confirm buttons to (asynchronousl
 
 setDebug(true|false) // Turns on console debugging (default is false)
 
-doConfirm(yesCallbackFunction, noCallbackFunction)  // Sets up notification to be a confirmation dialog
+doConfirm(yesCallbackFunction, noCallbackFunction, target)  // Sets up notification to be a confirmation dialog
                                                     // with a yes and no button.
                                                     // Accepts two function references
+                                                    // Third param is target element to add to callback
 ```
 
 ### Actions
