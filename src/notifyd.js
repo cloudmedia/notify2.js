@@ -56,9 +56,11 @@ class NotifyD {
         var d = new Date();
         if (res.status == 1) {
             var n = new Notify2(res.message, res.class, res.autoHide, res.delay);
-            if (res.doConfirm) n.doConfirm(eval(res.cbYes), eval(res.cbNo));
+            if (res.doConfirm) n.doConfirm(eval(res.cbYes), eval(res.cbNo), res.target);
             n.notify();
             if (typeof this.callback === 'function') this.callback(this);
+        } else if (res.status == 2) {
+            this.stop();
         } else {
             me.clog("No messages.");
         }
